@@ -76,9 +76,18 @@ Foss House, Kings Pool
 York YO1 7PX
 $A
 
-```{r, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+```{r infographic, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
+# this does not copy the image to the output/figures folder when the Rmarkdown
+# is rendered but would add it to an html/word/pdf output, and doesnt pollute
+# the govspeak output with a spurious []() link
 knitr::include_graphics(here("img", "agrifoodchain-infographic.png"))
+
+# so we force copy the graphic during rendering to ensure it is in the output
+# folder
+file.copy(from = here("img", "agrifoodchain-infographic.png"),
+          to = here("output", "figures", "agrifoodchain-infographic.png"),
+          overwrite = TRUE)
 
 ```
 
@@ -130,7 +139,7 @@ National Statistics.
 
 ## Total Factor Productivity of the UK food sector 
 
-```{r fsp-chart, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+```{r !!1-tfp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
 # read file 
 tfp <- read_csv(here("data", "foodstatisticspocketbook-foodchainproductivity-19oct17.csv"))
