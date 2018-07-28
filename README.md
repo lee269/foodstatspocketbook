@@ -3,7 +3,7 @@ Experiment in using Rmarkdown to generate
 [Govspeak](https://govspeak-preview.herokuapp.com) files and charts for the
 pocketbook.
 
-##Workflow:
+## Workflow:
 
 1. Update/add tidy csv files into the data folder for items that are not going
 to be Govspeak toggle charts.
@@ -20,7 +20,7 @@ Issues below).
 
 6. Your publication is ready for upload to www.gov.uk!
 
-##Issues:
+## Issues:
 
 * Govspeak that includes dollar signs, eg $A, $CTA etc messes up the content -
 pandoc evaluates it as TeX math. I cannot figure out how to tell it not to.
