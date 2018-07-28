@@ -76,6 +76,24 @@ Foss House, Kings Pool
 York YO1 7PX
 $A
 
+```{r address, results='markup', echo=FALSE}
+
+# gets close but adds comment symbols which would need to be removed later
+address <- paste("$A",
+                 "Food Statistics team",
+                 "Department for Environment, Food and Rural Affairs",
+                 "Foss Houose, KingsPool",
+                 "1-2 Peasholme Green",
+                 "York YO1 7PX",
+                 "$A",
+                 sep = "\n")
+
+cat(address)
+
+```
+
+
+
 ```{r infographic, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
 # this does not copy the image to the output/figures folder when the Rmarkdown

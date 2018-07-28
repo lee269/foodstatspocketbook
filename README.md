@@ -24,8 +24,17 @@ Issues below).
 
 * Govspeak that includes dollar signs, eg $A, $CTA etc messes up the content -
 pandoc evaluates it as TeX math. I cannot figure out how to tell it not to.
-Turning off the tex_math_dollars extension doesnt work.
+Turning off the tex_math_dollars extension doesnt work. Partial solution to
+`cat` print the markdown which successfully outputs the Govspeak and respects
+line breaks but R ## comments will need to be removed before publication.
 
-* Charts: you need to check that the !!<number> Govspeak references for charts are correctly in place, and remove any pandoc generated []() links to figures from the markdown.
+* Charts: you need to check that the !!<number> Govspeak references for charts
+are correctly in place, and remove any pandoc generated []() links to figures
+from the markdown.
+
+* Tables: pipe tables are rendered fine. But pandoc inserts a newline between
+the bottom of the table and the, eg, {barchart} Govspeak markdown for toggle
+charts. You need to ensure any toggle chart markdown is immediately below the
+table.
 
 
