@@ -17,12 +17,9 @@ library(tidyverse)
 library(reshape2)
 library(ggplot2)
 
+source(here("R", "chartstyle.R"))
 
-# source(here("R", "buildtext.R"))
-# source(here("R", "govstyle.R"))
-
-# knit command: knitr::knit(input = here("R", "Summary.Rmd"), output = here("output", "Summary.md"))
-
+# rmarkdown::render(input = here("R", "Summary.Rmd"), output_dir = here("output"))
 
 
 perc <- function(x, dp) {
@@ -31,17 +28,6 @@ perc <- function(x, dp) {
 
 # This is where to read key data
 
-# just read file for testing, need to get the data direct from excel
-tfp <- read_csv(here("data", "foodstatisticspocketbook-foodchainproductivity-19oct17.csv"))
-colnames(tfp) <- tolower(colnames(tfp))
-
-# Now make some reasonable datasets to draw upon later
-# Add year on year growth
-tfpgrowth <- tfp %>% 
-             group_by(sector) %>% 
-             mutate(yronyrprod = (productivity/lag(productivity)) - 1,
-                    yronyrinput = (inputs/lag(inputs)) - 1,
-                    yronyroutput = (outputs/lag(outputs)) - 1)
 
 
 
@@ -54,7 +40,7 @@ Data comes from surveys run by Defra and the Office for National Statistics and 
 The full publication is available here: 
 [Food statistics pocketbook](https://www.gov.uk/government/collections/food-statistics-pocketbook)
 
-Associated datasets from this year?s publication are also available.
+Associated datasets from this year£s publication are also available.
 Data are a mixture of National Statistics, Official Statistics and unofficial statistics. Unofficial statistics are used where there are gaps in the evidence base. Where National Statistics (Official Statistics that comply with the national statistics code of practice) are used this is indicated.
 Further information on National Statistics can be found on the UK Statistics Authority website.
 
@@ -66,8 +52,8 @@ Environmental information was previously sourced from these locations:
 [British Survey of Fertiliser Practice, Defra](https://www.gov.uk/government/collections/fertiliser-usage) and 
 [Energy consumption in the UK,BEIS](https://www.gov.uk/government/collections/energy-consumption-in-the-uk)
 
-Waste information was previously sourced from [WRAP.](http://www.wrap.org.uk/)
-& [Digest of waste and resource statistics(Defra)](https://www.gov.uk/government/collections/digest-of-waste-and-resource-statistics)
+Waste information was previously sourced from [WRAP](http://www.wrap.org.uk/)
+& [Digest of waste and resource statistics(Defra)](https://www.gov.uk/government/collections/digest-of-waste-and-resource-statistics).
 
 The sections on Dietary Health and Safety & Confidence are under review and so were not included in this update.
 
@@ -80,7 +66,7 @@ Tel: 0208 026 3006
 
 Production team: David Lee, Isabella Worth, Andrew Scaife, Graham Brown, Leigh Riley, Chris Silwood.
 
-You can also contact us via Twitter: [@DefraStats](https://twitter.com/defrastats)
+You can also contact us via Twitter: [\@DefraStats](https://twitter.com/defrastats)
 
 $A
 Food Statistics team
@@ -95,7 +81,7 @@ $A
 !!1
 
 {stat-headline}
-*?112.0bn* The agri-food sector contribution to national Gross Value Added in 2016.
+*£112.0bn* The agri-food sector contribution to national Gross Value Added in 2016.
 {/stat-headline}
 
 {stat-headline}
@@ -107,28 +93,28 @@ $A
 {/stat-headline}
 
 {stat-headline}
-*?203bn* Total consumer expenditure on food, drink and catering in 2016.
+*£203bn* Total consumer expenditure on food, drink and catering in 2016.
 {/stat-headline}
 
 {stat-headline}
-*?22bn* The value of food and drink exports in 2017.
+*£22bn* The value of food and drink exports in 2017.
 {/stat-headline}
 
 
 
 ## Gross Value Added of the UK agri-food sector 2016
 
-2016                           | ? billion |
+2016                           | £ billion |
 -|-
-Agriculture and Fishing        | ?9.0bn    | 
-Food and Drink Manufacturing   | ?28.8bn   | 
-Food and Drink Wholesaling     | ?12.0bn   | 
-Food and Drink Retailing       | ?29.8bn   | 
-Non-Residential Catering       | ?32.4bn   | 
-Total                          | ?112.0bn  | 
+Agriculture and Fishing        | £9.0bn    | 
+Food and Drink Manufacturing   | £28.8bn   | 
+Food and Drink Wholesaling     | £12.0bn   | 
+Food and Drink Retailing       | £29.8bn   | 
+Non-Residential Catering       | £32.4bn   | 
+Total                          | £112.0bn  | 
 {barchart}
 
-The agri-food sector contributed ?112.0 billion or 6.4% to national Gross Value Added in 2016.
+The agri-food sector contributed £112.0 billion or 6.4% to national Gross Value Added in 2016.
 
 The GVA of the food sector (excluding agriculture and fishing) increased 1.0% in 2016, following a 4.6% increase in 2015. Wholesaling GVA increased by 9.4%, whilst manufacturing increased by 3.5% and catering rose by 0.9%. Retailing GVA fell by 4.1%. 
 
@@ -137,13 +123,24 @@ Source: [Annual Business Survey (ONS).](https://www.ons.gov.uk/businessindustrya
 
 National Statistics.
 
-*[ONS]:Office for National Statistics
-
-*[Defra]:Department for Environment, Food and Rural Affairs
-
-
 
 ## Total Factor Productivity of the UK food sector 
+
+```{r fsp-chart, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+
+# read file 
+tfp <- read_csv(here("data", "foodstatisticspocketbook-foodchainproductivity-19oct17.csv"))
+colnames(tfp) <- tolower(colnames(tfp))
+
+ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
+  geom_line(aes(group = sector)) +
+  geom_point(aes(group = sector)) +
+  facet_wrap( ~ sector) +
+  theme_gov()
+
+
+
+```
 
 !!2
 
@@ -157,8 +154,6 @@ Source: [Total Factor Productivity of the United Kingdom Food Chain 2000-2015, D
 <sup>1</sup> See Glossary for definition of Total Factor Productivity.
 
 National statistics.
-
-*[Defra]:Department for Environment, Food and Rural Affairs
 
 
 
@@ -181,13 +176,9 @@ The food sector<sup>2</sup> in GB employed 3.5 million people in Q4 2017 (3.9 mi
 Source: [Labour Market Statistics (ONS)](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/previousReleases) & [June Survey structure statistics (Defra).](https://www.gov.uk/government/statistical-data-sets/structure-of-the-agricultural-industry-in-england-and-the-uk-at-june)
 
 
-<sup>2</sup> Food? includes non-alcoholic drinks. ?Drink? is alcoholic drinks
+<sup>2</sup> 'Food' includes non-alcoholic drinks. 'Drink' is alcoholic drinks
   
 National Statistics.
-
-*[ONS]:Office for National Statistics
-
-*[Defra]:Department for Environment, Food and Rural Affairs
 
 
  
@@ -196,14 +187,14 @@ National Statistics.
 
 !!4
 
-Total consumer expenditure on food, drink<sup>3</sup> and catering has continued to rise, by 6.2% in 2017 to ?220 billion. Expenditure on food (including non-alcoholic drinks) increased by 5.2%, alcoholic drinks by 7% and catering by 7.2%.  
+Total consumer expenditure on food, drink<sup>3</sup> and catering has continued to rise, by 6.2% in 2017 to £220 billion. Expenditure on food (including non-alcoholic drinks) increased by 5.2%, alcoholic drinks by 7% and catering by 7.2%.  
  
 
   
 Source: [Consumer Trends, (ONS).](https://www.ons.gov.uk/economy/nationalaccounts/satelliteaccounts/bulletins/consumertrends/previousReleases)
 
 
-<sup>3</sup>?Food? includes non-alcoholic drinks. ?Drink? is alcoholic drinks.
+<sup>3</sup>'Food' includes non-alcoholic drinks. 'Drink' is alcoholic drinks.
 
 National Statistics.
 
@@ -224,8 +215,6 @@ Source: [Consumer Price Indices, (ONS).](https://www.ons.gov.uk/economy/inflatio
 <sup>4</sup> Excludes catering.
 
 National Statistics.
-
-*[ONS]:Office for National Statistics
 
 
 
@@ -254,11 +243,9 @@ Oils and fats                                    |47%
 All food and non-alcoholic beverage groups have risen in price since 2007 (the start of the recession), with rises ranging from 19% to 47%. Coffee, tea and cocoa, fruit, sugar, jam and confectionery, fish and oils and fats have all risen in price by 35% or more since 2007. 
 
 
-Source: [Consumer Price Index including owner occupiers? housing costs (CPIH) (ONS).](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/previousReleases)
+Source: [Consumer Price Index including owner occupiers£ housing costs (CPIH) (ONS).](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/previousReleases)
 
 National Statistics.
-
-*[ONS]:Office for National Statistics
 
 
 
@@ -307,7 +294,7 @@ Source: [Chapter 14, Agriculture in the United Kingdom, Defra.](https://www.gov.
 
 ## Trend in exports of food, feed and drink
 
-Year  | ? billion |
+Year  | £ billion |
 -|-
 1995  |15.7
 1996  |14.7
@@ -334,16 +321,14 @@ Year  | ? billion |
 2017  |22.0                               
 {barchart}
 
-The total value of food and drink exports increased in 2017<sup>7</sup> to ?22 billion, ?1.9 billion more than the previous peak of ?20.1 billion in 2016.
-The trade deficit in food, feed and drink increase in 2017 to a new record high of ?24.2 billion, up from ?22.8 billion in 2016. 
+The total value of food and drink exports increased in 2017<sup>7</sup> to £22 billion, £1.9 billion more than the previous peak of £20.1 billion in 2016.
+The trade deficit in food, feed and drink increase in 2017 to a new record high of £24.2 billion, up from £22.8 billion in 2016. 
 
 
 Source: HM Revenue and Customs
 
 
 <sup>7</sup> 2017 figures are provisional.
-
-*[HMRC]:Her Majesty's Revenue and Customs
 
 
 
@@ -387,11 +372,11 @@ The most commonly used threshold to determine relative low income is having an i
 Absolute low income is considered to be having an income which is less than 60% of the median in that year, adjusted by inflation.
 
 ###Equivalised income
-The income a household needs to attain a given standard of living will depend on its size and composition. Equivalisation is a means of adjusting a household?s income for size and composition so that the incomes of all households are on a comparable basis.
+The income a household needs to attain a given standard of living will depend on its size and composition. Equivalisation is a means of adjusting a household's income for size and composition so that the incomes of all households are on a comparable basis.
 
 ###Small and Medium Enterprises (SMEs)
-Outside of these statistics, the definition of a SME can depend upon several factors, including turnover. For these statistics, a ?small? business is a private sector business with fewer than 50 employees. A ?medium? business is a private sector business with between 50 and 249 employees.
-A ?micro? business is a private sector business with between 1 and 10 employees, which, for the purpose of these statistics is incorporated within the ?small? category.
+Outside of these statistics, the definition of a SME can depend upon several factors, including turnover. For these statistics, a 'small' business is a private sector business with fewer than 50 employees. A 'medium' business is a private sector business with between 50 and 249 employees.
+A 'micro' business is a private sector business with between 1 and 10 employees, which, for the purpose of these statistics is incorporated within the £small£ category.
 
 
 
@@ -401,7 +386,7 @@ A ?micro? business is a private sector business with between 1 and 10 employees,
 
 
 
-```{r chart, echo=FALSE, fig.path="output/figures/"}
+```{r chart, echo=FALSE, fig.path="../output/figures/"}
 
 # tfp2 <- melt(tfp, id.vars = c("sector", "series"), variable.name = "year")
 tfp2 <- melt(tfp, id.vars = c("sector", "year"), variable.name = "series")
@@ -441,3 +426,8 @@ ggplot(data=tfp2, aes(x=year, y=value, colour = sector)) +
 
 
 ```
+
+
+\*[ONS]: Office for National Statistics
+\*[Defra]: Department for Environment, Food and Rural Affairs
+\*[HMRC]:Her Majesty's Revenue and Customs
