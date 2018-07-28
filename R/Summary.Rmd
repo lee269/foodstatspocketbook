@@ -76,7 +76,11 @@ Foss House, Kings Pool
 York YO1 7PX
 $A
 
+```{r, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
+knitr::include_graphics(here("img", "agrifoodchain-infographic.png"))
+
+```
 
 !!1
 
@@ -132,13 +136,81 @@ National Statistics.
 tfp <- read_csv(here("data", "foodstatisticspocketbook-foodchainproductivity-19oct17.csv"))
 colnames(tfp) <- tolower(colnames(tfp))
 
+tfp$sector <- factor(tfp$sector)
+levels(tfp$sector) <- c("Manufacturing", "Wholesale", "Food chain", "Retail", "Catering")
+
+cols <- gov_cols[1:5]
+names(cols) <- levels(tfp$sector)
+colscale <- scale_colour_manual(name = "sector", values = cols)
+
+
 ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
   geom_line(aes(group = sector)) +
   geom_point(aes(group = sector)) +
   facet_wrap( ~ sector) +
-  theme_gov()
+  theme_gov(axes = "xy", base_size = 10) +
+  colscale
 
 
+cols <- c(gov_cols[1], "grey", "grey", "grey", "grey")
+names(cols) <- levels(tfp$sector)
+colscale <- scale_colour_manual(name = "sector", values = cols)
+
+p1 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
+  geom_line(aes(group = sector)) +
+  geom_point(aes(group = sector)) +
+  theme_gov(axes = "xy", base_size = 10) +
+  colscale +
+  ggtitle("Manufacturing")
+
+cols <- c("grey", gov_cols[1], "grey", "grey", "grey")
+names(cols) <- levels(tfp$sector)
+colscale <- scale_colour_manual(name = "sector", values = cols)
+
+p2 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
+  geom_line(aes(group = sector)) +
+  geom_point(aes(group = sector)) +
+  theme_gov(axes = "xy", base_size = 10) +
+  colscale +
+  ggtitle("Wholesale")
+
+
+cols <- c("grey", "grey", gov_cols[1], "grey", "grey")
+names(cols) <- levels(tfp$sector)
+colscale <- scale_colour_manual(name = "sector", values = cols)
+
+p3 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
+  geom_line(aes(group = sector)) +
+  geom_point(aes(group = sector)) +
+  theme_gov(axes = "xy", base_size = 10) +
+  colscale +
+  ggtitle("Food chain")
+
+cols <- c("grey", "grey", "grey", gov_cols[1], "grey")
+names(cols) <- levels(tfp$sector)
+colscale <- scale_colour_manual(name = "sector", values = cols)
+
+p4 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
+  geom_line(aes(group = sector)) +
+  geom_point(aes(group = sector)) +
+  theme_gov(axes = "xy", base_size = 10) +
+  colscale +
+  ggtitle("Retail")
+
+
+cols <- c("grey", "grey", "grey", "grey", gov_cols[1])
+names(cols) <- levels(tfp$sector)
+colscale <- scale_colour_manual(name = "sector", values = cols)
+
+p5 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
+  geom_line(aes(group = sector)) +
+  geom_point(aes(group = sector)) +
+  theme_gov(axes = "xy", base_size = 10) +
+  colscale +
+  ggtitle("Catering")
+
+
+gridExtra::grid.arrange(p1, p2, p3, p4, p5, nrow = 2)
 
 ```
 
