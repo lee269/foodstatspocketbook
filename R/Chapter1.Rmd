@@ -1,0 +1,297 @@
+---
+output: 
+  md_document:
+    variant: markdown_strict+pipe_tables
+    fig_width: 10
+    fig_height: 6.67
+params:
+  year: 2017
+  status: provisional
+---
+
+
+
+## 1.1: Gross Value Added of the UK agri-food sector, 2016   ***4th LINE NEEDS UPDATING***
+
+2016                           | ? billion |
+-|-
+Agriculture and Fishing        | ?9.0bn    | 
+Food and Drink Manufacturing   | ?28.8bn   | 
+Food and Drink Wholesaling     | ?12.0bn   | 
+Food and Drink Retailing       | ?29.8bn   | 
+Non-Residential Catering       | ?32.4bn   | 
+Total                          | ?112.0bn  | 
+{barchart}
+
+
+
+The agri-food sector contributed ?112 billion or 6.4% to national Gross Value Added in 2016.
+
+The GVA of the food sector (excluding agriculture and fishing) increased 1.0% in 2016, following a 4.6% increase in 2015. Wholesaling GVA increased by 9.4%, whilst manufacturing increased by 3.5% and catering rose by 0.9%. Retailing GVA fell by 4.1%. 
+
+Longer term, the food sector (excluding agriculture and fishing) increased by 76% between 2000 and 2016 while the whole economy increased by 78.9%. The food sector has less scope for growth as there is a limit to consumer intake capacity and therefore it relies largely on quality improvements.
+
+
+Source: [Annual Business Survey (ONS).](https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/uknonfinancialbusinesseconomy/previousReleases) & [Chapter 4 of Agriculture in the United Kingdom (Defra).](https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom-2017)
+
+
+
+National Statistics.
+
+*[ONS]:Office for National Statistics
+
+*[Defra]:Department for Environment, Food and Rural Affairs
+
+
+
+## 1.2: Trends in the total factor productivity of the UK food sector 
+!!3   
+
+Total factor productivity <sup>1</sup> of the UK food chain beyond the farmgate has risen by 1.9% between 2015 and 2016. Productivity in the wider economy has decreased in 2016 by 0.3%.
+
+The TFP of the UK food sector is an indicator of the efficiency and competitiveness of the food industry within the UK.  An increase in TFP indicates the industry is improving its competitiveness.  In 2016, productivity in food wholesaling <sup>2</sup> saw the highest increase of 3.4 per cent, while catering saw a decrease of 2.7 per cent.
+The calculation is based on reliable data on business sales and costs, employment by industry and on price indices all collected by the Office for National Statistics.
+
+
+Source: [Total Factor Productivity of the United Kingdom Food Chain, Defra.](https://www.gov.uk/government/statistics/food-chain-productivity)
+
+
+<sup>1</sup> See Glossary for definition of Total Factor Productivity.
+
+<sup>2</sup> Wholesaling includes tobacco (SIC 46.35).
+
+National Statistics.
+
+*[Defra]:Department for Environment, Food and Rural Affairs
+
+
+
+
+## 1.3: Agri-food sector employees (GB), Q4 2017
+
+Q4 2017                        | million employees |
+-|-
+Agriculture and Fishing        | 0.43 | 
+Food and Drink Manufacturing   | 0.39 | 
+Food and Drink Wholesaling     | 0.23 | 
+Food and Drink Retailing       | 1.13 | 
+Non-Residential Catering       | 1.76 | 
+Total food sector              | 3.52 | 
+Total agri-food sector         | 3.95 |
+{barchart}
+
+
+The food sector<sup>3</sup> in GB employed 3.5 million people in Q4 2017 (3.9 million if agriculture and fishing are included along with self-employed farmers), a 1.2% increase on a year earlier. It covered 12% of GB employment in Q4 2017 (13% if agriculture and fishing are included along with self-employed farmers).
+
+Non-residential catering accounted for 50% of the post-farm gate food chain in Q4 2017. Employment in this sector increased 2.7% on a year earlier, equating to around 47,000 jobs. Retailing accounted for around one third of food chain jobs (excluding agriculture) in Q4 2017 and increased by 0.4% from a year earlier, or around 5,000 jobs.   
+ 
+In Q4 2017, one half of food sector jobs were part time. Women accounted for 56% of employees in food retailing and 53% in non-residential catering.
+
+
+Source: [Labour Market Statistics (ONS)](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/previousReleases) & [June Survey structure statistics (Defra).](https://www.gov.uk/government/statistical-data-sets/structure-of-the-agricultural-industry-in-england-and-the-uk-at-june)
+
+
+<sup>3</sup> 'Food? includes non-alcoholic drinks. ?Drink? is alcoholic drinks
+
+National Statistics.
+
+*[ONS]:Office for National Statistics
+
+*[Defra]:Department for Environment, Food and Rural Affairs
+
+
+
+
+## 1.4:  UK food and drink manufacturing by product type 
+
+Product                   | Number of SMEs in 2016 |
+-|-
+Meat and meat products	  | 795 |  
+Fish and crustaceans	  | 245 |
+Fruit and vegetables	  | 370 |
+Oils and fats	          | 35 |
+Dairy products	          | 490 |
+Grain and starch products | 100 |
+Bakery	                  | 2,350 |
+Other food products	  | 1,205 |
+Prepared animal feeds	  | 325 |
+Beverages	          |1,105 |
+{barchart}
+
+Product                   | GVA of sector in 2016 ? billion |
+-|-
+Meat and meat products	  | 3.7 |  
+Fish and crustaceans	  | 0.7 |
+Fruit and vegetables	  | 2.1 |
+Oils and fats	          | 0.1 |
+Dairy products	          | 2.6 |
+Grain and starch products | 1.4 |
+Bakery	                  | 3.9 |
+Other food products       | 5.9 |
+Prepared animal feeds	  | 1.9 |
+Beverages	          | 7.2 | 
+{barchart}
+
+There were approximately 6,700 micro, small and medium sized enterprises (SMEs) in the food and drink sector with turnover of around ?18 billion and 120,000 employees in 2017. In the food sector (excluding beverages) SMEs accounted for 97% of businesses, 28% of employment and 19% of turnover. Around a third of the SMEs are manufacturers of bakery products.
+In terms of Gross Value Added<sup>5</sup> (GVA), the ?other food products? category (SIC code 0108) was the largest manufacturing category with a value of ?5.8 billion in 2016; contributing 20% to the total food and drink manufacturing GVA.  This includes items such as prepared meals, confectionery, condiments and seasonings.
+Bakery and farinaceous products (SIC code 0107) had a GVA of ?3.9 billion in 2016 contributing 20% to the total food and drink manufacturing GVA. 
+
+
+Source: [Annual Business Survey (ONS)](https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/uknonfinancialbusinesseconomy/previousReleases) & [Business Population Estimates (BEIS).](https://www.gov.uk/government/collections/business-population-estimates)
+
+
+<sup>5</sup> For disclosure reasons some small contributions (less than 4% overall) to food and drink manufacturing GVA have been treated as zeros.
+
+National Statistics.
+
+*[ONS]:Office for National Statistics
+*[BEIS]:Department for Business, Energy and Industrial Strategy
+
+
+
+
+## 1.5: UK grocery market shares 2016   
+
+Retailer            | % of market share |
+-|-
+Tesco               | 19 |  
+Sainsburys          | 11 |
+Asda                | 11 |
+Morrisons           | 9 |
+Aldi    	    | 7 |
+Lidl          	    | 5 |
+Waitrose     	    | 4 |
+Marks and Spencer   | 4 |
+Co-op               | 4 |
+Iceland             | 2 |
+Internet            | 8 |
+Other multiples	    | 7 |
+Other               | 8 |
+{barchart}
+
+
+
+The combined market share of food and non-alcoholic drinks of the largest four food and drink retailers was 50% in 2016, down from 55% in 2015.  Tesco commanded the largest market share at 19%, the same level as 2015.  The three largest discounters (Aldi, Iceland and Lidl) had a combined market share of 14%, up from 13% in 2015. Internet food shopping, which includes the largest supermarkets, increased to 8% of sales of food and non-alcoholic drinks, up from 6.1% in 2015.
+Data comes from the Living Costs and Food Survey which is fully representative of UK household food shopping.
+
+Alternative market share estimates from the Kantar Worldpanel <sup>6</sup> are more up to date although not restricted to foods and not as representative.
+
+
+Source: [Living Costs and Food Survey, (Defra/ONS).](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/bulletins/familyspendingintheuk/financialyearending2017)
+
+
+<sup>6</sup> Kantar Worldpanel is a market research company, providing up to date statistics on sales by the grocery sector. Market shares also include sales of non-food.
+
+
+National Statistics.
+
+*[ONS]:Office for National Statistics
+
+*[Defra]:Department for Environment, Food and Rural Affairs
+
+
+
+
+## 1.6: UK Consumer expenditure on food, drink and catering
+
+!!4
+
+Total consumer expenditure on food, drink<sup>7</sup> and catering has continued to rise, by 6.2% in 2017 to ?220 billion. Expenditure on food (including non-alcoholic drinks) increased by 5.2%, alcoholic drinks by 7% and catering by 7.2%.  
+
+Spend on food shopping has increased 32% since 2008. In 2017 it accounted for 47% of spend in the sector. Spend on catering accounted for 28% of sector spend in 2017 and has increased by 34% since 2008.
+  
+Spend on all alcoholic drinks accounted for 25% of sector spend in 2017. It has increased by 42% since 2008. Spend reduced between 2008 and 2009, but has increased yearly thereafter.
+
+
+Source: [Consumer Trends, (ONS).](https://www.ons.gov.uk/economy/nationalaccounts/satelliteaccounts/bulletins/consumertrends/previousReleases)
+
+
+<sup>7</sup> Food? includes non-alcoholic drinks. ?Drink? is alcoholic drinks
+
+National Statistics.
+
+*[ONS]:Office for National Statistics
+
+
+##[Go to Summary section](https://www.gov.uk/government/publications/food-statistics-pocketbook-2017/food-statistics-in-your-pocket-2017-summary)
+
+##[Go to Prices and expenditure section](https://www.gov.uk/government/publications/food-statistics-pocketbook-2017/food-statistics-in-your-pocket-2017-prices-and-expenditure)
+
+##[Go to Global and UK supply section](https://www.gov.uk/government/publications/food-statistics-pocketbook-2017/food-statistics-in-your-pocket-2017-global-and-uk-supply)
+
+##[Go to home page for downloadable data for charts](https://www.gov.uk/government/statistics/food-statistics-pocketbook-2017)
+
+
+
+##Contact
+
+
+Enquiries to: <familyfood@defra.gsi.gov.uk> 
+
+Lead statistician: David Lee
+
+Tel: 0208 026 3006
+
+You can also contact us via Twitter: [@DefraStats](https://twitter.com/defrastats)
+
+$A
+Food Statistics team
+Department for Environment, Food and Rural Affairs
+Foss House, Kings Pool
+1-2 Peasholme Green
+York YO1 7PX
+$A
+
+
+
+##Glossary
+
+###Economic Definition of food and agri-food sector
+
+The UK food sector is defined as food manufacturing, food wholesaling, food retailing and non- residential catering.  In terms of the standard industrial classification (SIC 2007) it is defined as:
+
+Category                     | SIC codes
+-|-
+Food Manufacturing:          | 10 + 11 |
+Food Wholesaling:            | 46.3 (excluding 46.35) + 46.17 |
+Food Retailing:              | 47.2 (excluding 47.26) + 47.11 + 47.81 | 
+Non-residential Catering:    | 56 |
+
+The deductions are to remove non-food items as far as possible.
+The agri-food sector is the food sector plus agriculture and fishing. Agriculture and fishing are shown in several charts for comparison.
+
+###Net capital expenditure
+This is calculated by adding to the value of new building work, acquisitions less disposals of land and existing buildings, vehicles and plant and machinery.
+
+###Gross Value Added (GVA)
+GVA is the difference between output and intermediate consumption for any given sector / industry. This is the difference between the value of goods and services produced and the cost of raw materials and other inputs which are used up in production.
+
+###Total Factor Productivity (TFP)
+Productivity measures the efficiency at which inputs are converted into outputs. Total Factor Productivity provides a comprehensive picture of growth.
+
+###Low income
+The most commonly used threshold to determine relative low income is having an income which is less than 60% of the median in that year.
+Absolute low income is considered to be having an income which is less than 60% of the median in that year, adjusted by inflation.
+
+###Equivalised income
+The income a household needs to attain a given standard of living will depend on its size and composition. Equivalisation is a means of adjusting a household?s income for size and composition so that the incomes of all households are on a comparable basis.
+
+###Small and Medium Enterprises (SMEs)
+Outside of these statistics, the definition of a SME can depend upon several factors, including turnover. For these statistics, a ?small? business is a private sector business with fewer than 50 employees. A ?medium? business is a private sector business with between 50 and 249 employees.
+A ?micro? business is a private sector business with between 1 and 10 employees, which, for the purpose of these statistics is incorporated within the ?small? category.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

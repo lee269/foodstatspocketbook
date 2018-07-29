@@ -76,7 +76,7 @@ Foss House, Kings Pool
 York YO1 7PX
 $A
 
-```{r address, results='markup', echo=FALSE}
+```{r address, results='markup', echo=FALSE, comment=NA}
 
 # gets close but adds comment symbols which would need to be removed later
 address <- paste("$A",
