@@ -78,7 +78,8 @@ $A
 
 ```{r address, results='markup', echo=FALSE, comment=NA}
 
-# gets close but adds comment symbols which would need to be removed later
+# gets close. Comments are removed with the chunk option but the output is
+# indented and will need manual adjustment
 address <- paste("$A",
                  "Food Statistics team",
                  "Department for Environment, Food and Rural Affairs",
@@ -104,7 +105,7 @@ knitr::include_graphics(here("img", "agrifoodchain-infographic.png"))
 # so we force copy the graphic during rendering to ensure it is in the output
 # folder
 file.copy(from = here("img", "agrifoodchain-infographic.png"),
-          to = here("output", "figures", "agrifoodchain-infographic.png"),
+          to = here("output", "figures", "1-agrifoodchain-infographic.png"),
           overwrite = TRUE)
 
 ```
@@ -157,7 +158,7 @@ National Statistics.
 
 ## Total Factor Productivity of the UK food sector 
 
-```{r !!1-tfp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+```{r 2-summary-tfp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
 # read file 
 tfp <- read_csv(here("data", "foodstatisticspocketbook-foodchainproductivity-19oct17.csv"))
@@ -177,67 +178,6 @@ ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
   facet_wrap( ~ sector) +
   theme_gov(axes = "xy", base_size = 10) +
   colscale
-
-
-cols <- c(gov_cols[1], "grey", "grey", "grey", "grey")
-names(cols) <- levels(tfp$sector)
-colscale <- scale_colour_manual(name = "sector", values = cols)
-
-p1 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
-  geom_line(aes(group = sector)) +
-  geom_point(aes(group = sector)) +
-  theme_gov(axes = "xy", base_size = 10) +
-  colscale +
-  ggtitle("Manufacturing")
-
-cols <- c("grey", gov_cols[1], "grey", "grey", "grey")
-names(cols) <- levels(tfp$sector)
-colscale <- scale_colour_manual(name = "sector", values = cols)
-
-p2 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
-  geom_line(aes(group = sector)) +
-  geom_point(aes(group = sector)) +
-  theme_gov(axes = "xy", base_size = 10) +
-  colscale +
-  ggtitle("Wholesale")
-
-
-cols <- c("grey", "grey", gov_cols[1], "grey", "grey")
-names(cols) <- levels(tfp$sector)
-colscale <- scale_colour_manual(name = "sector", values = cols)
-
-p3 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
-  geom_line(aes(group = sector)) +
-  geom_point(aes(group = sector)) +
-  theme_gov(axes = "xy", base_size = 10) +
-  colscale +
-  ggtitle("Food chain")
-
-cols <- c("grey", "grey", "grey", gov_cols[1], "grey")
-names(cols) <- levels(tfp$sector)
-colscale <- scale_colour_manual(name = "sector", values = cols)
-
-p4 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
-  geom_line(aes(group = sector)) +
-  geom_point(aes(group = sector)) +
-  theme_gov(axes = "xy", base_size = 10) +
-  colscale +
-  ggtitle("Retail")
-
-
-cols <- c("grey", "grey", "grey", "grey", gov_cols[1])
-names(cols) <- levels(tfp$sector)
-colscale <- scale_colour_manual(name = "sector", values = cols)
-
-p5 <- ggplot(data=tfp, aes(x=year, y=productivity, colour = sector)) +
-  geom_line(aes(group = sector)) +
-  geom_point(aes(group = sector)) +
-  theme_gov(axes = "xy", base_size = 10) +
-  colscale +
-  ggtitle("Catering")
-
-
-gridExtra::grid.arrange(p1, p2, p3, p4, p5, nrow = 2)
 
 ```
 
@@ -283,6 +223,11 @@ National Statistics.
  
 
 ## UK Consumer expenditure on food, drink and catering  
+
+```{r !!summary-consexp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+
+
+```
 
 !!4
 
@@ -476,55 +421,6 @@ The income a household needs to attain a given standard of living will depend on
 ###Small and Medium Enterprises (SMEs)
 Outside of these statistics, the definition of a SME can depend upon several factors, including turnover. For these statistics, a 'small' business is a private sector business with fewer than 50 employees. A 'medium' business is a private sector business with between 50 and 249 employees.
 A 'micro' business is a private sector business with between 1 and 10 employees, which, for the purpose of these statistics is incorporated within the £small£ category.
-
-
-
-
-
-
-
-
-
-```{r chart, echo=FALSE, fig.path="../output/figures/"}
-
-# tfp2 <- melt(tfp, id.vars = c("sector", "series"), variable.name = "year")
-tfp2 <- melt(tfp, id.vars = c("sector", "year"), variable.name = "series")
-
-ggplot(data=tfp2, aes(x=year, y=value, colour = series)) +
-  geom_line(aes(group = series)) +
-  geom_point(aes(group = series)) +
-  facet_wrap( ~ sector) +
-  labs(x = "Year", y = "Index (2000 = 100)") +
-  scale_x_discrete(breaks = seq(2000, 2016, 2)) 
-
-ggplot(data=tfp2, aes(x=year, y=value, colour = sector)) +
-  geom_line(aes(group = sector)) +
-  geom_point(aes(group = sector)) +
-  facet_wrap( ~ series)
-
-
-
-
-# sector x different series
-tfp2 <- tfp[which(tfp$sector == "Manufacturing"), ]
-tfp2 <- melt(tfp2, id.vars = c("sector", "year"), variable.name = "series")
-
-ggplot(data=tfp2, aes(x=year, y=value, colour = series)) +
-  geom_line(aes(group = series)) +
-  geom_point(aes(group = series))
-
-
-# Prod x sector
-
-tfp2 <- tfp[which(tfp$series == "Productivity"), ]
-tfp2 <- melt(tfp2, id.vars = c("sector", "year"), variable.name = "series")
-
-ggplot(data=tfp2, aes(x=year, y=value, colour = sector)) +
-  geom_line(aes(group = sector)) +
-  geom_point() 
-
-
-```
 
 
 \*[ONS]: Office for National Statistics
