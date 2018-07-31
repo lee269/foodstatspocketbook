@@ -1,0 +1,201 @@
+Year,Category,Spend (£m)
+1999,Organic,390
+2000,Organic,605
+2001,Organic,805
+2002,Organic,910
+2003,Organic,1000
+2004,Organic,1193
+2005,Organic,1473
+2006,Organic,1737
+2007,Organic,1982
+2008,Organic,1986
+2009,Organic,1704
+2010,Organic,1475
+2011,Organic,1382
+2012,Organic,1660
+2013,Organic,1660
+2014,Organic,1669
+2015,Organic,1744
+1999,Fairtrade,22
+2000,Fairtrade,33
+2001,Fairtrade,51
+2002,Fairtrade,63
+2003,Fairtrade,92
+2004,Fairtrade,141
+2005,Fairtrade,195
+2006,Fairtrade,285
+2007,Fairtrade,458
+2008,Fairtrade,635
+2009,Fairtrade,749
+2010,Fairtrade,1064
+2011,Fairtrade,1253
+2012,Fairtrade,1552
+2013,Fairtrade,1553
+2014,Fairtrade,1649
+2015,Fairtrade,1572
+1999,Free-range eggs,173
+2000,Free-range eggs,182
+2001,Free-range eggs,167
+2002,Free-range eggs,169
+2003,Free-range eggs,188
+2004,Free-range eggs,215
+2005,Free-range eggs,240
+2006,Free-range eggs,259
+2007,Free-range eggs,314
+2008,Free-range eggs,419
+2009,Free-range eggs,448
+2010,Free-range eggs,419
+2011,Free-range eggs,525
+2012,Free-range eggs,523
+2013,Free-range eggs,622
+2014,Free-range eggs,632
+2015,Free-range eggs,609
+1999,Free-range poultry,37
+2000,Free-range poultry,44
+2005,Free-range poultry,100
+2006,Free-range poultry,116
+2007,Free-range poultry,130
+2008,Free-range poultry,174
+2009,Free-range poultry,174
+2010,Free-range poultry,251
+2011,Free-range poultry,265
+2012,Free-range poultry,268
+2013,Free-range poultry,268
+2014,Free-range poultry,290
+2015,Free-range poultry,275
+1999,"Vegetarian
+meat alternatives",452
+2000,"Vegetarian
+meat alternatives",479
+2001,"Vegetarian
+meat alternatives",530
+2002,"Vegetarian
+meat alternatives",570
+2003,"Vegetarian
+meat alternatives",613
+2004,"Vegetarian
+meat alternatives",626
+2005,"Vegetarian
+meat alternatives",639
+2006,"Vegetarian
+meat alternatives",664
+2007,"Vegetarian
+meat alternatives",758
+2008,"Vegetarian
+meat alternatives",768
+2009,"Vegetarian
+meat alternatives",549
+2010,"Vegetarian
+meat alternatives",541
+2011,"Vegetarian
+meat alternatives",573
+2012,"Vegetarian
+meat alternatives",613
+2013,"Vegetarian
+meat alternatives",668
+2014,"Vegetarian
+meat alternatives",668
+2015,"Vegetarian
+meat alternatives",710
+2009,Freedom foods,491
+2010,Freedom foods,572
+2011,Freedom foods,740
+2012,Freedom foods,1013
+2013,Freedom foods,1209
+2014,Freedom foods,1221
+2015,Freedom foods,1570
+2003,Sustainable fish,11
+2004,Sustainable fish,11
+2005,Sustainable fish,17
+2006,Sustainable fish,55
+2007,Sustainable fish,70
+2008,Sustainable fish,128
+2009,Sustainable fish,178
+2010,Sustainable fish,141
+2011,Sustainable fish,293
+2012,Sustainable fish,351
+2013,Sustainable fish,412
+2014,Sustainable fish,462
+2015,Sustainable fish,507
+2008,"Rainforest
+Alliance",369
+2009,"Rainforest
+Alliance",1076
+2010,"Rainforest
+Alliance",1197
+2011,"Rainforest
+Alliance",1345
+2012,"Rainforest
+Alliance",1980
+2013,"Rainforest
+Alliance",1976
+2014,"Rainforest
+Alliance",2048
+2015,"Rainforest
+Alliance",2048
+2000,Food & drink boycotts,587
+2002,Food & drink boycotts,787
+2003,Food & drink boycotts,914
+2004,Food & drink boycotts,989
+2005,Food & drink boycotts,993
+2006,Food & drink boycotts,993
+2007,Food & drink boycotts,1144
+2008,Food & drink boycotts,1069
+2009,Food & drink boycotts,1040
+2010,Food & drink boycotts,1084
+2011,Food & drink boycotts,1113
+2012,Food & drink boycotts,2478
+2013,Food & drink boycotts,2478
+2014,Food & drink boycotts,1482
+2015,Food & drink boycotts,752
+1999,Total ethical foods and boycotts,1074
+2000,Total ethical foods and boycotts,1930
+2001,Total ethical foods and boycotts,1553
+2002,Total ethical foods and boycotts,2499
+2003,Total ethical foods and boycotts,2818
+2004,Total ethical foods and boycotts,3175
+2005,Total ethical foods and boycotts,3657
+2006,Total ethical foods and boycotts,4109
+2007,Total ethical foods and boycotts,4856
+2008,Total ethical foods and boycotts,5548
+2009,Total ethical foods and boycotts,6409
+2010,Total ethical foods and boycotts,6744
+2011,Total ethical foods and boycotts,7489
+2012,Total ethical foods and boycotts,10438
+2013,Total ethical foods and boycotts,10846
+2014,Total ethical foods and boycotts,10121
+2015,Total ethical foods and boycotts,9787
+1999,Total ethical foods,1074
+2000,Total ethical foods,1343
+2001,Total ethical foods,1553
+2002,Total ethical foods,1712
+2003,Total ethical foods,1904
+2004,Total ethical foods,2186
+2005,Total ethical foods,2664
+2006,Total ethical foods,3116
+2007,Total ethical foods,3712
+2008,Total ethical foods,4479
+2009,Total ethical foods,5369
+2010,Total ethical foods,5660
+2011,Total ethical foods,6376
+2012,Total ethical foods,7960
+2013,Total ethical foods,8368
+2014,Total ethical foods,8639
+2015,Total ethical foods,9035
+1999,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",210
+2000,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",226
+2001,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",167
+2002,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",169
+2003,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",199
+2004,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",226
+2005,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",357
+2006,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",430
+2007,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",514
+2008,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",721
+2009,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",1291
+2010,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",1383
+2011,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",1823
+2012,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",2155
+2013,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",2511
+2014,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",2605
+2015,"Others (include free range eggs and poultry, freedom foods and sustainable fish)",2961
