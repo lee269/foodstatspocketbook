@@ -224,12 +224,29 @@ National Statistics.
 
 ## UK Consumer expenditure on food, drink and catering  
 
-```{r !!summary-consexp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+```{r 3-summary-consexp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+
+conexp <- read_csv(here("data", "foodstatisticspocketbook-consumerexpenditure-19oct17.csv"))
+colnames(conexp) <- c("year", "type", "expenditure")
+
+cols <- gov_cols[1:3]
+names(cols) <- levels(factor(conexp$type))
+
+library(ggrepel)
+
+ggplot(data = conexp, aes(x = year, y = expenditure)) +
+  geom_line(aes(colour = factor(type))) +
+  # geom_text_repel(data = subset(conexp, year == 2013), aes(label = factor(type), colour = factor(type))) +
+  theme_gov(base_size = 12) +
+  scale_colour_manual(values = cols) +
+  theme(legend.position = c(0.2, 0.9),
+        legend.title = element_blank(),
+        legend.key = element_blank())
 
 
 ```
 
-!!4
+!!3
 
 Total consumer expenditure on food, drink<sup>3</sup> and catering has continued to rise, by 6.2% in 2017 to £220 billion. Expenditure on food (including non-alcoholic drinks) increased by 5.2%, alcoholic drinks by 7% and catering by 7.2%.  
  
