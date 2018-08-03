@@ -1,21 +1,22 @@
 # taken from https://github.com/ukgovdatascience/govstyle
 
+# First few are in default chart colour order
 gov_cols <- c(
+  govuk_blue  = "#005EA5",
+  turquoise   = "#28A197",
+  green       = "#006435",
+  grass_green = "#85994B",
+  yellow      = "#FFBF47",
+  orange      = "#F47738",
+  red         = "#B10E1E",
+  mellow_red  = "#DF3034",
   purple      = "#2E358B",
   pink        = "#D53880",
-  mellow_red  = "#DF3034",
-  yellow      = "#FFBF47",
-  turquoise   = "#28A197",
   mauve       = "#6F72AF",
   baby_pink   = "#F499BE",
-  orange      = "#F47738",
-  green       = "#006435",
   light_blue  = "#2B8CC4",
   fuschia     = "#912B88",
-  red         = "#B10E1E",
-  brown       = "#B58840",
-  grass_green = "#85994B",
-  govuk_blue  = "#005EA5"
+  brown       = "#B58840"
 )
 
 
