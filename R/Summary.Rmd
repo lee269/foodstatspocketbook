@@ -13,6 +13,10 @@ params:
   dataset3: employment.csv
   dataset4: foodstatisticspocketbook-consumerexpenditure-19oct17.csv
   dataset5: foodstatisticspocketbook-foodpriceinflation-19oct17.csv
+  dataset6: retailprices.csv
+  dataset7: mintel.csv
+  dataset8: origins.csv
+  dataset9: exports.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -32,10 +36,6 @@ source(here::here("R", "chartstyle.R"))
 
 # rmarkdown::render(input = here("R", "Summary.Rmd"), output_dir = here("output"))
 
-
-perc <- function(x, dp) {
-  sprintf("%.*f", dp, x*100)
-}
 
 copydataset <- function(prefix, filename) {
 file.copy(from = here::here("data", filename),
@@ -151,7 +151,6 @@ file.copy(from = here::here("img", params$infographic),
 
 gva <- read_csv(here::here("data", params$dataset1))
 copydataset("summary-1", params$dataset1)
-
 gva
 
 ```
@@ -222,16 +221,6 @@ copydataset("summary-3", params$dataset3)
 employment
 
 ```
-
-Q1 2017                        | million employees |
--|-
-Agriculture and Fishing        | 0.43 | 
-Food and Drink Manufacturing   | 0.39 | 
-Food and Drink Wholesaling     | 0.23 | 
-Food and Drink Retailing       | 1.13 | 
-Non-Residential Catering       | 1.76 | 
-Total food sector              | 3.52 | 
-Total agri-food sector         | 3.95 |
 {barchart compact}
 
 The food sector<sup>2</sup> in GB employed 3.5 million people in Q4 2017 (3.9 million if agriculture and fishing are included along with self-employed farmers), a 1.2% increase on a year earlier. It covered 12% of GB employment in Q4 2017 (13% if agriculture and fishing are included along with self-employed farmers).
@@ -275,11 +264,8 @@ ggplot(data = conexp, aes(x = year, y = expenditure)) +
 !!3
 
 Total consumer expenditure on food, drink<sup>3</sup> and catering has continued to rise, by 6.2% in 2017 to £220 billion. Expenditure on food (including non-alcoholic drinks) increased by 5.2%, alcoholic drinks by 7% and catering by 7.2%.  
- 
-
   
 Source: [Consumer Trends, (ONS).](https://www.ons.gov.uk/economy/nationalaccounts/satelliteaccounts/bulletins/consumertrends/previousReleases)
-
 
 <sup>3</sup>'Food' includes non-alcoholic drinks. 'Drink' is alcoholic drinks.
 
@@ -323,7 +309,6 @@ Food and non-alcoholic beverage price inflation in real terms has increased by 0
 
 Source: [Consumer Price Indices, (ONS).](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/previousReleases)
 
-
 <sup>4</sup> Excludes catering.
 
 National Statistics.
@@ -332,22 +317,14 @@ National Statistics.
 
 ## UK retail price changes by food group, 2007 to 2017
 
-Food group                                       | % change between 2007 and 2017 |
--|-
-CPIH (overall index)	                         |24%
-Milk, cheese and eggs	                         |19%
-Vegetables including potatoes and tubers	 |21%
-Alcoholic beverages	                         |21%
-Mineral waters, soft drinks and juices	         |22%
-Meat	                                         |28%
-Food and non-alcoholic beverages	         |31%
-Bread and cereals	                         |32%
-Catering services	                         |34%
-Coffee, tea and cocoa	                         |42%
-Fish             	                         |42%
-Sugar, jam, syrups, chocolate and confectionery	 |43%
-Fruit	                                         |44%
-Oils and fats                                    |47%
+```{r summary-6-retailprices, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+retail <- read_csv(here::here("data", params$dataset6))
+copydataset("summary-6", params$dataset6)
+
+retail
+
+```
 {barchart compact}
 
 
@@ -366,8 +343,7 @@ National Statistics.
 ```{r summary-7-mintel, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
 
 mintel <- read_csv(here::here("data", "mintel.csv"))
-
-
+copydataset("summary-7", params$dataset7)
 mintel
 
 ```
@@ -384,16 +360,15 @@ Source: Lightspeed GMI/Mintel
 
 ## Origins of food consumed in the UK, 2017
 
-Region            |Percentage supplied to the UK
--|-
-UK<sup>a</sup>    |50%|
-EU 	          |30%|
-Africa            |4%|
-North America     |4%|
-South America     |4%|
-Asia      	  |4%|
-Rest of Europe	  |2%|
-Australasia	  |1%|
+```{r summary-8-origins, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+origins <- read_csv(here::here("data", params$dataset8))
+copydataset("summary-8", params$dataset8)
+
+origins
+
+```
+
 {barchart compact}
 
 (a) UK origin consists of UK domestic production minus UK exports
@@ -414,31 +389,14 @@ Source: [Chapter 14, Agriculture in the United Kingdom, Defra.](https://www.gov.
 
 ## Trend in exports of food, feed and drink
 
-Year  | £ billion |
--|-
-1995  |15.7
-1996  |14.7
-1997  |14.4
-1998  |13.3
-1999  |12.7
-2000  |11.9
-2001  |11.5
-2002  |11.8
-2003  |12.8
-2004  |12.2
-2005  |12.2
-2006  |12.5
-2007  |13.3
-2008  |15.0
-2009  |15.9
-2010  |17.7
-2011  |19.9
-2012  |19.6
-2013  |20.0
-2014  |19.6
-2015  |18.8
-2016  |20.1
-2017  |22.0                               
+```{r summary-9-exports, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+exports <- read_csv(here::here("data", params$dataset9))
+copydataset("summary-9", params$dataset9)
+
+exports
+
+```
 {barchart compact}
 
 The total value of food and drink exports increased in 2017<sup>7</sup> to £22 billion, £1.9 billion more than the previous peak of £20.1 billion in 2016.
