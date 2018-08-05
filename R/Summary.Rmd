@@ -4,6 +4,7 @@ output:
     variant: markdown_strict+pipe_tables
     fig_width: 10
     fig_height: 6.67
+    df_print: kable
 params:
   year: 2017
   status: provisional
@@ -75,13 +76,6 @@ Production team: David Lee, Isabella Worth, Andrew Scaife, Graham Brown, Leigh R
 
 You can also contact us via Twitter: [\@DefraStats](https://twitter.com/defrastats)
 
-$A
-Food Statistics team
-Department for Environment, Food and Rural Affairs
-Foss House, Kings Pool
-1-2 Peasholme Green
-York YO1 7PX
-$A
 
 ```{r address, results='markup', echo=FALSE, comment=NA}
 
@@ -90,7 +84,7 @@ $A
 address <- paste("$A",
                  "Food Statistics team",
                  "Department for Environment, Food and Rural Affairs",
-                 "Foss Houose, KingsPool",
+                 "Foss Houose, Kings Pool",
                  "1-2 Peasholme Green",
                  "York YO1 7PX",
                  "$A",
@@ -151,7 +145,7 @@ Food and Drink Wholesaling     | £12.0bn   |
 Food and Drink Retailing       | £29.8bn   | 
 Non-Residential Catering       | £32.4bn   | 
 Total                          | £112.0bn  | 
-{barchart}
+{barchart compact}
 
 The agri-food sector contributed £112.0 billion or 6.4% to national Gross Value Added in 2016.
 
@@ -217,7 +211,7 @@ Food and Drink Retailing       | 1.13 |
 Non-Residential Catering       | 1.76 | 
 Total food sector              | 3.52 | 
 Total agri-food sector         | 3.95 |
-{barchart}
+{barchart compact}
 
 The food sector<sup>2</sup> in GB employed 3.5 million people in Q4 2017 (3.9 million if agriculture and fishing are included along with self-employed farmers), a 1.2% increase on a year earlier. It covered 12% of GB employment in Q4 2017 (13% if agriculture and fishing are included along with self-employed farmers).
 
@@ -331,7 +325,7 @@ Fish             	                         |42%
 Sugar, jam, syrups, chocolate and confectionery	 |43%
 Fruit	                                         |44%
 Oils and fats                                    |47%
-{barchart}
+{barchart compact}
 
 
 
@@ -346,15 +340,14 @@ National Statistics.
 
 ## Attitudes towards British food purchases in the UK (2016)   
 
-|Question                                                              |Strongly agree |Agree |Neither agree nor disagree |Disagree |Strongly disagree | |
-|:---------------------------------------------------------------------|:--------------|:-----|:--------------------------|:--------|:-----------------| |
-|I try to buy British food whenever I can                              |17%            |42%   |31%                        |8%       |2%                | |
-|British food tends to be more expensive than imported food            |11%            |33%   |46%                        |9%       |1%                | |
-|I usually check the label to see which country my groceries come from |12%            |35%   |29%                        |19%      |5%                | |
-|I think that British food tastes better                               |13%            |29%   |47%                        |9%       |2%                | |
-|It's important to support British farmers                             |26%            |51%   |20%                        |2%       |1%                | |
-|I'm prepared to pay more for British food                             |9%             |29%   |40%                        |18%      |4%                | |
-{barchart stacked}
+```{r 5-summary-mintel, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+mintel <- read_csv(here::here("data", "mintel.csv"))
+
+mintel
+
+```
+{barchart stacked compact}
 
 When surveyed, 60% of shoppers agree that they try to buy British food whenever they can while 8% disagree.  76% agree that it is important to support British farmers while only 3% disagree.
 According to the survey 45% think that British food tastes better while 9% disagree.
@@ -377,7 +370,7 @@ South America     |4%|
 Asia      	  |4%|
 Rest of Europe	  |2%|
 Australasia	  |1%|
-{barchart}
+{barchart compact}
 
 (a) UK origin consists of UK domestic production minus UK exports
 
