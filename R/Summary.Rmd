@@ -7,7 +7,12 @@ output:
     df_print: kable
 params:
   year: 2017
-  status: provisional
+  infographic: agrifoodchain-infographic.png
+  dataset1: foodchaingva.csv
+  dataset2: foodstatisticspocketbook-foodchainproductivity-19oct17.csv
+  dataset3: employment.csv
+  dataset4: foodstatisticspocketbook-consumerexpenditure-19oct17.csv
+  dataset5: foodstatisticspocketbook-foodpriceinflation-19oct17.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -32,6 +37,11 @@ perc <- function(x, dp) {
   sprintf("%.*f", dp, x*100)
 }
 
+copydataset <- function(prefix, filename) {
+file.copy(from = here::here("data", filename),
+          to = here::here("output", "data", paste(prefix, filename, sep = "-")),
+          overwrite = TRUE)
+}
 
 # Thoughts
 # params (not used so far) could be filenames of csvs to use for charts
@@ -101,12 +111,12 @@ cat(address)
 # this does not copy the image to the output/figures folder when the Rmarkdown
 # is rendered but would add it to an html/word/pdf output, and doesnt pollute
 # the govspeak output with a spurious []() link
-knitr::include_graphics(here::here("img", "agrifoodchain-infographic.png"))
+knitr::include_graphics(here::here("img", params$infographic))
 
 # so we force copy the graphic during rendering to ensure it is in the output
 # folder
-file.copy(from = here::here("img", "agrifoodchain-infographic.png"),
-          to = here::here("output", "figures", "1-agrifoodchain-infographic.png"),
+file.copy(from = here::here("img", params$infographic),
+          to = here::here("output", "figures", paste("summary-1", params$infographic, sep = "-")),
           overwrite = TRUE)
 
 ```
@@ -137,14 +147,14 @@ file.copy(from = here::here("img", "agrifoodchain-infographic.png"),
 
 ## Gross Value Added of the UK agri-food sector 2016
 
-2016                           | £ billion |
--|-
-Agriculture and Fishing        | £9.0bn    | 
-Food and Drink Manufacturing   | £28.8bn   | 
-Food and Drink Wholesaling     | £12.0bn   | 
-Food and Drink Retailing       | £29.8bn   | 
-Non-Residential Catering       | £32.4bn   | 
-Total                          | £112.0bn  | 
+```{r summary-1-GVA, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+gva <- read_csv(here::here("data", params$dataset1))
+copydataset("summary-1", params$dataset1)
+
+gva
+
+```
 {barchart compact}
 
 The agri-food sector contributed £112.0 billion or 6.4% to national Gross Value Added in 2016.
@@ -159,11 +169,13 @@ National Statistics.
 
 ## Total Factor Productivity of the UK food sector 
 
-```{r 2-summary-tfp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+```{r summary-2-tfp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
 
 # read file 
-tfp <- read_csv(here::here("data", "foodstatisticspocketbook-foodchainproductivity-19oct17.csv"))
+tfp <- read_csv(here::here("data", params$dataset2))
+copydataset("summary-2", params$dataset2)
+
 colnames(tfp) <- tolower(colnames(tfp))
 
 tfp$sector <- factor(tfp$sector, ordered = TRUE, levels = c("Manufacturing", "Wholesale", "Food chain", "Retail", "Catering"))
@@ -202,6 +214,15 @@ National statistics.
 
 ## Agri-food sector employees (GB), Q4 2017
 
+```{r summary-3-employment, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+employment <- read_csv(here::here("data", params$dataset3))
+copydataset("summary-3", params$dataset3)
+
+employment
+
+```
+
 Q1 2017                        | million employees |
 -|-
 Agriculture and Fishing        | 0.43 | 
@@ -228,9 +249,10 @@ National Statistics.
 
 ## UK Consumer expenditure on food, drink and catering  
 
-```{r 3-summary-consexp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+```{r summary-4-consexp, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
-conexp <- read_csv(here::here("data", "foodstatisticspocketbook-consumerexpenditure-19oct17.csv"))
+conexp <- read_csv(here::here("data", params$dataset4))
+copydataset("summary-4", params$dataset4)
 colnames(conexp) <- c("year", "type", "expenditure")
 
 cols <- gov_cols[1:3]
@@ -268,9 +290,10 @@ National Statistics.
 
 ## UK trend in food and non-alcoholic beverage prices in real terms, January 1998 to March 2018
 
-```{r 4-summary-prices, echo=FALSE, fig.path="../output/figures/", include=FALSE}
+```{r summary-5-prices, echo=FALSE, fig.path="../output/figures/", include=FALSE}
 
-cpi <- read_csv(here::here("data", "foodstatisticspocketbook-foodpriceinflation-19oct17.csv"))
+cpi <- read_csv(here::here("data", params$dataset5))
+copydataset("summary-5", params$dataset5)
 colnames(cpi) <- c("year", "month", "series", "index")
 
 cpi <- cpi %>% 
@@ -340,9 +363,10 @@ National Statistics.
 
 ## Attitudes towards British food purchases in the UK (2016)   
 
-```{r 5-summary-mintel, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+```{r summary-7-mintel, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
 
 mintel <- read_csv(here::here("data", "mintel.csv"))
+
 
 mintel
 
