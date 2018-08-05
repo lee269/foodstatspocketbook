@@ -38,9 +38,14 @@ source(here::here("R", "chartstyle.R"))
 
 
 copydataset <- function(prefix, filename) {
-file.copy(from = here::here("data", filename),
+# the invisible(capture.output thing is to stop R peinting 'TRUE' to the console
+# after copying. See
+# https://stackoverflow.com/questions/48499400/suppress-automatic-output-to-console-in-r
+invisible(capture.output(
+  file.copy(from = here::here("data", filename),
           to = here::here("output", "data", paste(prefix, filename, sep = "-")),
           overwrite = TRUE)
+  ))
 }
 
 # Thoughts

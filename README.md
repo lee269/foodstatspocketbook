@@ -8,12 +8,14 @@ pocketbook.
 1. Update/add tidy csv files into the data folder for items that are not going
 to be Govspeak toggle charts.
 
-2. Revise the Rmd commentary as appropriate.
+2. Revise the Rmd commentary as appropriate. Optionally update the parameters
+for new data files, or change them in the render command (see next).
 
 3. render the Rmd file as markdown (doc is set up for this)
 
 4. Output defaults to the output folder (not in this repo). Markdown is stored
-in there, plots/images should be generated in output/figures folder.
+in there, plots/images should be generated in output/figures folder. Datafiles
+are copied to the output/data folder.
 
 5. Tweak the generated markdown files to conform to Govspeak standards (see
 Issues below).
