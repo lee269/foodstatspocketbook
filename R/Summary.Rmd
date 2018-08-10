@@ -49,8 +49,8 @@ invisible(capture.output(
 }
 
 # Thoughts
-# params (not used so far) could be filenames of csvs to use for charts
-# And should we read in csvs for toggle charts and kable them?
+# params (not used so far) could be filenames of csvs to use for charts - done
+# And should we read in csvs for toggle charts and kable them? - done
 
 
 
@@ -63,7 +63,7 @@ Data comes from surveys run by Defra and the Office for National Statistics and 
 The full publication is available here: 
 [Food statistics pocketbook](https://www.gov.uk/government/collections/food-statistics-pocketbook)
 
-Associated datasets from this year£s publication are also available.
+Associated datasets from this year's publication are also available.
 Data are a mixture of National Statistics, Official Statistics and unofficial statistics. Unofficial statistics are used where there are gaps in the evidence base. Where National Statistics (Official Statistics that comply with the national statistics code of practice) are used this is indicated.
 Further information on National Statistics can be found on the UK Statistics Authority website.
 
@@ -83,8 +83,8 @@ The sections on Dietary Health and Safety & Confidence are under review and so w
 
 ###Contact
 
-Enquiries to: <familyfood@defra.gsi.gov.uk>
-Lead statistician:David Lee
+Enquiries to: <familyfood@defra.gsi.gov.uk>  
+Lead statistician:David Lee  
 Tel: 0208 026 3006
 
 Production team: David Lee, Isabella Worth, Andrew Scaife, Graham Brown, Leigh Riley, Chris Silwood.
